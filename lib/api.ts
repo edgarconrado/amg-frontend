@@ -7,13 +7,13 @@ export const fetchCategory = async () => {
         .order('created_at', {
             ascending: true
         });
-
-    if (error){
+    if (error){   
         return [];
-    }
-        
+    }   
     else
+    { 
         return data;
+    }        
 };
 
 export type Categories = Awaited<ReturnType<typeof fetchCategory>>;

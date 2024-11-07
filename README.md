@@ -31,7 +31,22 @@ Incluye un enlace a una demo (si está disponible) o captura de pantalla de la a
    git clone https://github.com/usuario/tu_proyecto.git
    cd tu_proyecto
 
-2. **Instala las dependencias::**
+2. **Instala las dependencias:**
    ```bash
-   git clone https://github.com/usuario/tu_proyecto.git
-   cd tu_proyecto
+   npm install
+
+3. **Ejecuta la app en modo desarrollo:**
+   ```bash
+   expo start
+
+4. **Configuración de variables de entorno (opcional):**
+   ```bash
+
+- **Crea un archivo .env en la raíz del proyecto y añade tus variables de entorno.** 
+- **Configura Expo para que lea el archivo .env (si aplicable).** 
+
+## 🌐 API y Conexiones
+Describe brevemente las APIs o servicios externos que tu app consume.
+
+## 📱 Uso
+Describe cómo se utiliza tu aplicación (ej., cómo navegar por las pantallas, funcionalidades destacadas).

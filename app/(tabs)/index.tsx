@@ -1,10 +1,10 @@
-import { FlatList, StyleSheet } from 'react-native';
-
 import AddCategoryForm from '@/components/AddCategoryForm';
-import { Text, View } from '@/components/Themed';
+import ShowCategories from '@/components/ShowCategories';
+import { View } from '@/components/Themed';
+import { Categories, fetchCategory } from '@/lib/api';
 import { supabase } from '@/lib/supabase';
 import { useEffect, useState } from 'react';
-import { Categories, fetchCategory } from '@/lib/api';
+import { StyleSheet } from 'react-native';
 
 export default function TabOneScreen() {
 
@@ -26,7 +26,7 @@ export default function TabOneScreen() {
     if (error)
       console.log(error);
     else
-      setCategories([...categories, data[0]]);
+      setCategories([...categories, data[0]]);  
   }
 
   return (
@@ -35,11 +35,12 @@ export default function TabOneScreen() {
         onSubmit={handleSubmit}
       />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <FlatList
+      <ShowCategories categories={categories} />
+      {/* <FlatList
         data={categories}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <Text>{item.name}</Text>}
-      />
+      /> */}
     </View>
   );
 }
